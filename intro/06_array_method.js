@@ -48,16 +48,16 @@ let colors = ['red', 'green', 'blue']
 // ]
 // const areas = []
 
-// // images.forEach(function(info) {
-// //     areas.push(info.height * info.width)
-// // })
-// // console.log(areas)
+// images.forEach(function(info) {
+//     areas.push(info.height * info.width)
+// })
+// console.log(areas)
 
 // const numbers = [1, 2, 3, 4, 5]
 // const doubleNumbers = []
-// // numbers.forEach(function(number){
-// //     doubleNumbers.push(number*2)
-// // })
+// numbers.forEach(function(number){
+//     doubleNumbers.push(number*2)
+// })
 // const double = numbers.map(number => number * 2)
 
 // console.log(double)

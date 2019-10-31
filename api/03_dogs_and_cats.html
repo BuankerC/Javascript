@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>강아지</h1>
+  <button id="append-dog">댕댕아</button>
+  <h1>고양이</h1>
+  <button id="append-cat">냥집사</button>
+  <div class="animals">
+    
+  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    const dogBtn = document.querySelector('#append-dog')
+    dogBtn.addEventListener('click', ()=>{
+      getDogImage()
+    })
+    const getDogImage = () => {
+
+      const dogUrl = "https://dog.ceo/api/breeds/image/random"
+  
+      axios.get(dogUrl)
+        .then((response)=>{
+          const dogImage = response.data.message
+          const imageTag = document.createElement('img')
+          imageTag.src = dogImage
+          document.querySelector('.animals').appendChild(imageTag)
+        })
+        .catch((error)=>{
+          console.log(error)
+        })
+    }
+
+  </script>
+  <script>
+    const catBtn = document.querySelector('#append-cat')
+    catBtn.addEventListener('click', ()=>{
+      getCatImage()
+    })
+    const getCatImage = () => {
+
+      const catUrl = "https://api.thecatapi.com/v1/images/%7Bimage_id%7D"
+  
+      axios.get(catUrl)
+        .then((response)=>{
+          const CatImage = response.data.message
+          const imageTag = document.createElement('img')
+          imageTag.src = CatImage
+          document.querySelector('.animals').appendChild(imageTag)
+        })
+        .catch((error)=>{
+          console.log(error)
+        })
+    }
+  
+  </script>
+</body>
+</html>
